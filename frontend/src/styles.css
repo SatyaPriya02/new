@@ -1,0 +1,113 @@
+:root{ 
+  --bg:#0f172a; 
+  --card:#111827; 
+  --muted:#1f2937; 
+  --text:#e5e7eb; 
+  --primary:#4f46e5; 
+  --danger:#ef4444; 
+  --secondary:#64748b; 
+}
+*{ box-sizing:border-box; }
+body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; background:var(--bg); color:var(--text); }
+a{ color:inherit; text-decoration:none; }
+
+/* Layout */
+.navbar{ position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; padding:12px 20px; background:var(--card); border-bottom:1px solid #202636; }
+.brand{ font-weight:700; letter-spacing:.3px; }
+.nav-links{ display:flex; gap:14px; }
+.nav-links a{ padding:8px 10px; border-radius:10px; }
+.nav-links a:hover{ background:var(--muted);background-color:rgb(0, 204, 255);color: black; }
+.right{ display:flex; align-items:center; gap:10px; }
+.username{ opacity:.85; }
+.container{ max-width:1100px; margin:24px auto; padding:0 16px; }
+.card{ background:var(--card); border:1px solid #202636; border-radius:16px; padding:18px; box-shadow:0 8px 30px rgba(0,0,0,.25); }
+.row{ display:flex; gap:12px; align-items:center; }
+.row.between{ justify-content:space-between; }
+.grid{ display:grid; gap:12px; }
+.actions{ display:flex; gap:12px; justify-content:flex-start; }
+.total{ margin-top:12px; }
+.nav-links a { padding: 6px 12px; text-decoration: none; color: #333; }
+.nav-links a.active-link { font-weight: bold; color: #007bff; border-bottom: 2px solid #007bff; }
+
+/* Forms */
+label{ display:flex; flex-direction:column; gap:6px; font-size:.95rem; }
+input, textarea, select{ width:100%; padding:10px 12px; border-radius:10px; border:1px solid #2a3345; background:#0b1220; color:white; }
+textarea{ min-height:100px; resize:vertical; }
+
+.btn{ 
+  padding:10px 15px; 
+  border:none; 
+  border-radius:8px; 
+  cursor:pointer; 
+  font-weight:600; 
+  color:white;
+}
+.btn:hover{ filter:brightness(1.05); }
+.btn:disabled{ opacity:.6; cursor:not-allowed; }
+.btn-outline{ background:transparent; border:1px solid #39506f; }
+.btn-secondary{ background:var(--secondary); }
+.btn-danger{ background:var(--danger); }
+.btn-primary{ background:var(--primary); }
+
+/* Auth */
+.auth-container{ min-height:100vh; display:grid; place-items:center; padding:20px; }
+.auth-container .card{ width:min(420px, 92vw); }
+.error{ color:#fca5a5; margin-top:8px; }
+.success{ color:#86efac; margin-top:8px; }
+
+/* Tables */
+.table{ width:100%; border-collapse:collapse; margin-top:12px; }
+.table th,.table td{ border-bottom:1px solid #232b3b; padding:10px; text-align:left; font-size:.95rem; }
+.table tr:hover{ background:rgb(198, 210, 30); }
+.actions .btn{ margin:0; }
+
+/* Webcam */
+.webcam-box{ display:grid; gap:12px; }
+.webcam-actions{ display:flex; align-items:center; gap:12px; }
+.preview{ width:120px; height:90px; object-fit:cover; border-radius:10px; border:1px solid #2a3345; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  display: flex; justify-content: center; align-items: center;
+}
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+}
+.modal input, .modal select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+/* Light mode fallback */
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #f7f8fa; color:#333; margin:0; }
+.container { max-width: 1100px; margin:auto; padding:20px; }
+.card { background:#fff; padding:18px; border-radius:10px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.navbar { padding:12px 18px; background:#fff; border-bottom:1px solid #eee; display:flex; gap:12px; align-items:center; }
+.table { width:100%; border-collapse: collapse; margin-top:12px; }
+.table th, .table td { padding:10px; border-bottom:1px solid #eee; text-align:left; }
+.btn { padding:8px 12px; border-radius:6px; border: none; cursor:pointer;background-color: #0d70da; }
+.btn-primary { background:#1e70ec; color:#fff; }
+.btn-danger { background:#dc3545; color:#fff; }
+.btn-outline { background:transparent; border:1px solid #0d6efd; color:#0d6efd; padding:6px 10px; border-radius:6px; }
+.btn-secondary { background:#6c757d; }
+.modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.4); display:flex; justify-content:center; align-items:center; z-index:30; }
+.modal { background:#fff; padding:20px; border-radius:10px; width:520px; max-width:95%; }
+.leave-table { width:100%; border-collapse: collapse; margin-top:12px; }
+.leave-table th, .leave-table td { padding:10px; border-bottom:1px solid #eee; }
+
+/* ✅ Final Add/Edit buttons – placed LAST so they override */
+.btn-add, 
+.btn-edit { 
+  background:#1a6fee !important; 
+  color:#fff !important;
+}
+
