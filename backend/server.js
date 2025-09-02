@@ -134,12 +134,18 @@ app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 app.get("/", (req, res) => res.send("Employee Attendance API is running 🚀"));
 
-// ✅ Mount API routes
-app.use("/api", authRoutes);
-app.use("/api", attendanceRoutes);
-app.use("/api", leaveRoutes);
-app.use("/api", adminRoutes);
-app.use("/api", fileRoutes);   // ✅ serves /api/file/:id (GridFS)
+// // ✅ Mount API routes
+// app.use("/api", authRoutes);
+// app.use("/api", attendanceRoutes);
+// app.use("/api", leaveRoutes);
+// app.use("/api", adminRoutes);
+// app.use("/api", fileRoutes);   // ✅ serves /api/file/:id (GridFS)
+
+app.use("/api/auth", authRoutes);         // e.g. POST /api/auth/login
+app.use("/api/attendance", attendanceRoutes);
+app.use("/api/leave", leaveRoutes);
+app.use("/api/admin", adminRoutes);
+app.use("/api/file", fileRoutes);
 
 // error handlers
 app.use(notFound);
